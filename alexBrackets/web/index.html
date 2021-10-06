@@ -1,11 +1,14 @@
 <!DOCTYPE html> 
 
 <html lang='en'>
+
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
         
         body {
-            background-image: url('universityOfMissouri.jpeg');
+            /* background-image: url('universityOfMissouri.jpeg'); */
             background-repeat: no-repeat;
         }
         
@@ -54,7 +57,35 @@
         }
   </style>
     
-    <script src="Login.js"></script>
+    <!-- <script src="Login.js"></script> -->
+    <!-- <script src="app.js"></script> -->
+
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
+      import { auth } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js';
+      import { firestore } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js';
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBoLeOYI3itU1ezQkcULZVqnWToKf8CtXU",
+        authDomain: "sers-web.firebaseapp.com",
+        projectId: "sers-web",
+        storageBucket: "sers-web.appspot.com",
+        messagingSenderId: "1002952873066",
+        appId: "1:1002952873066:web:a8fcafe3f6d40bacd76613",
+        measurementId: "G-C5LP6WPSZY"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     
   <title>SERS | Login</title>
 
@@ -70,16 +101,20 @@
           <input id="password" type="password" placeholder="Enter Password" name="pwd" required>
 
           <button type="login" value='login' onclick="addEvent1()">Sign In</button>
+          <button onclick="googleLogin()">Login with Google</button>
         </div>
 
         <div class="sidenav">
             <a class="navbar-brand" href="/">
               <div class="logo-image">
-                    <img src="mu-tiger.png" class="img-fluid">
+                    <!-- <img src="mu-tiger.png" class="img-fluid"> -->
               </div>
             </a>
         </div>
-        
+
+        <script src="app.js"></script>
+
+
 </body>
 
 </html>
